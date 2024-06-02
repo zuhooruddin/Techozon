@@ -3,6 +3,7 @@ import React from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
+    export const dynamic = 'force-dynamic';
 
 const fetchBlogs = async () => {
   const querySnapshot = await getDocs(collection(db, 'blogs'));
@@ -11,6 +12,7 @@ const fetchBlogs = async () => {
 export const metadata = {
   title: 'My Content',
 };
+
 const BlogsPage = async () => {
   const blogs = await fetchBlogs();
 
